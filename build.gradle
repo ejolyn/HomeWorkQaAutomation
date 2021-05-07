@@ -6,16 +6,27 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
+    jcenter()
+    maven {
+        url "https://maven.google.com"
+    }
     mavenCentral()
 }
 
 dependencies {
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
 
     //database
     implementation 'com.h2database:h2:1.4.194'
+    implementation 'org.hibernate:hibernate-core:5.2.6.Final'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.3'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
     testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 }
 
